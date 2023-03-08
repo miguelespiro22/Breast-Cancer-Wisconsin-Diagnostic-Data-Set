@@ -1,16 +1,24 @@
 # Breast-Cancer-Wisconsin-Diagnostic-Data-Set
-Introducción
-En este proyecto, desarrollaré un modelo que pueda identificar si un paciente tiene o no cáncer de mama. Para ello, utilizaré un conjunto de datos del repositorio de aprendizaje automático de UCI. El conjunto de datos contiene mediciones de características del núcleo de células obtenidas a partir de muestras de tejido mamario de mujeres con cáncer de mama. El objetivo es desarrollar un modelo de aprendizaje automático que pueda predecir si una muestra es benigna o maligna. Dado que es más peligroso tener un falso negativo (un resultado incorrecto que indica que la muestra es benigna cuando en realidad es maligna), enfocaré la evaluación del modelo en minimizar los falsos negativos.
+Este código es un ejemplo de análisis y modelado de datos para un conjunto de datos de diagnóstico de cáncer de mama. A continuación, se muestra un resumen de lo que hace cada parte del código:
 
-Datos
-El conjunto de datos que utilizaré en este proyecto está disponible en el siguiente enlace: https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
+-Importa las librerías necesarias para el análisis y modelado de datos.
+-Lee el conjunto de datos desde un archivo en línea.
+-Realiza una exploración inicial de los datos: muestra los primeros registros, imprime información sobre las columnas y muestra estadísticas descriptivas.
+-Elimina dos columnas que no son necesarias para el análisis.
+-Divide los datos en variables independientes (X) y dependiente (y), donde la variable objetivo es el diagnóstico (benigno o maligno).
+-Muestra el recuento de casos benignos y malignos en la variable objetivo.
+-Realiza una matriz de correlación para visualizar la relación entre las variables independientes.
+-Elimina las variables que tienen una baja correlación con la variable objetivo.
+-Divide los datos en conjuntos de entrenamiento y prueba.
 
-El conjunto de datos contiene 569 muestras de células de mama, cada una de las cuales tiene 30 características. Cada muestra tiene una etiqueta que indica si la muestra es benigna (B) o maligna (M). La etiqueta es el resultado que se intentará predecir con el modelo.
+-Entrena un modelo de Random Forest y evalúa su precisión.
+-Realiza una selección de características utilizando el método de chi-cuadrado.
+-Entrena un segundo modelo de Random Forest con las características seleccionadas y evalúa su precisión.
+-Entrena un modelo de Support Vector Machine (SVM) y evalúa su precisión.
+-Entrena un modelo de Regresión Logística y evalúa su precisión.
 
-Preprocesado de datos
-Antes de empezar a construir el modelo, es necesario preprocesar los datos. En particular, es necesario:
 
-Cargar los datos desde un archivo CSV.
-Eliminar las columnas que no se utilizarán en el modelo.
-Convertir las etiquetas en valores binarios (0 o 1) para que puedan ser utilizadas por los algoritmos de aprendizaje automático.
-Escalar los datos para que tengan una media de 0 y una desviación estándar de 1. Esto ayuda a asegurar que las características tengan la misma escala y evita que las características con valores grandes dominen el modelo.
+La conclusión de este análisis es que se pueden usar diferentes modelos de aprendizaje automático para predecir si un diagnóstico de cáncer de mama es benigno o maligno. Los modelos de Random Forest y SVM parecen ser los más precisos en este conjunto de datos en particular, pero siempre es importante evaluar varios modelos antes de elegir el mejor para un problema específico. Además, la selección de características puede mejorar la precisión del modelo, lo que hace que sea importante considerar este paso en el proceso de modelado.
+
+
+
